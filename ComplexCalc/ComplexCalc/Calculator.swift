@@ -36,10 +36,40 @@ class Calculator {
         return result
     }
     
+    //subtract
+    public func subtract(lhs : Int, rhs : Int) -> Int {
+        return lhs - rhs
+    }
     
-    //substract
+    public func subtract(lhs : (Int, Int), rhs : (Int, Int)) -> (Int, Int){
+        return(lhs.0 - rhs.0, lhs.1 - rhs.1)
+    }
+    
+    public func subtract(lhs: [String : Int], rhs: [String : Int]) -> [String: Int]{
+        var result = [String: Int]()
+        result["x"] = lhs["x"]! - rhs["x"]!
+        result["y"] = lhs["y"]! - rhs["y"]!
+        return result
+    }
+    
     //multiply
+    public func multiply(lhs : Int, rhs : Int) -> Int {
+        return lhs * rhs
+    }
+    
+    public func multiply(_ input: [Int]) -> Int{
+        var result = 0
+        for n in input{
+            result = result * n
+        }
+        return result
+    }
+    
     //divide
+    public func divide(lhs : Int, rhs : Int) -> Int {
+        return lhs / rhs
+    }
+    
     //mapOp
     //count
     //avg
