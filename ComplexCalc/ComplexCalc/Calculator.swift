@@ -58,7 +58,7 @@ class Calculator {
     }
     
     public func multiply(_ input: [Int]) -> Int{
-        var result = 0
+        var result = 1
         for n in input{
             result = result * n
         }
@@ -71,10 +71,27 @@ class Calculator {
     }
     
     //mapOp
+    public func mathOp(lhs : Int, rhs : Int, op : (Int, Int) -> Int) ->Int {
+        return op(lhs, rhs)
+    }
+    
+    public func mathOp(args: [Int], beg: Int, op: (Int, Int) -> Int) -> Int {
+        var result = beg
+        for num in args {
+            result = op(num, result)
+        }
+        return result;
+    }
+    
     //count
+    public func count(_ input: [Int]) -> Int{
+        return input.count
+    }
+    
     //avg
-    
-    
-    
-
+    public func avg(_ input : [Int]) -> Int {
+        var res = add(input)
+        res = res / input.count
+        return res
+    }
 }
